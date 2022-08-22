@@ -4,6 +4,7 @@ use App\Http\Controllers\CatatanController;
 use App\Http\Controllers\DatadiriController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
