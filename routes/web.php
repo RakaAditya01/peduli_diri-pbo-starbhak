@@ -5,6 +5,7 @@ use App\Http\Controllers\DatadiriController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,18 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 //datadiri
-Route::get('/data', [DatadiriController::class, 'index'])->name('data');
+Route::get('/datadiri', [DatadiriController::class,'index'])->name('datadiri');
+
+Route::get('/tambahdata', [DatadiriController::class,'tambahdata'])->name('tambahdata');
+
+Route::post('/insertdatadiri', [DatadiriController::class,'store'])->name('insertdatadiri');
+
+Route::get('/tampilandata/{id}', [DatadiriController::class,'tampilandata'])->name('tampilandata');
+
+Route::put('/updatedata/{id}', [DatadiriController::class,'update'])->name('updatedata');
+
+Route::delete('/deletedata/{id}', [DatadiriController::class,'destroy'])->name('deletedata');
+//end datadiri
 
 
 // catatan
