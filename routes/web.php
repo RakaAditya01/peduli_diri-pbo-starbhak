@@ -45,6 +45,16 @@ Route::delete('/deletedata/{id}', [DatadiriController::class,'destroy'])->name('
 // catatan
 Route::get('/catatan',[CatatanController::class, 'index'])->name('catatan');
 
+Route::get('/tambahcatatan', [CatatanController::class,'tambahcatatan'])->name('tambahcatatan');
+
+Route::post('/insertcatatan', [CatatanController::class,'store'])->name('insertcatatan');
+
+Route::get('/tampilancatatan/{id}', [CatatanController::class,'tampilancatatan'])->name('tampilancatatan');
+
+Route::put('/updatecatatan/{id}', [CatatanController::class,'update'])->name('updatecatatan');
+
+Route::delete('/deletecatatan/{id}', [CatatanController::class,'destroy'])->name('deletecatatan');
+
 //login
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 
