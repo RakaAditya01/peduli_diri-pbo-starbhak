@@ -11,13 +11,13 @@ class LoginController extends Controller
 {
 
     public function login(){
-        return view('login');
+        return view('login\login');
     }
 
     public function loginproses(Request $request)
     {
-        if(Auth::attempt($request->only('nik','nama_lengkap'))){
-            return redirect('/');
+        if(Auth::attempt($request->only('email','password'))){
+            return redirect('/home');
         }
         return redirect('login');
     }
@@ -30,8 +30,8 @@ class LoginController extends Controller
     public function registeruser(Request $request){
         // dd($request->all());
         user::create([
-            'nik' => $request->nik,
-            'nama_lengkap' => $request->nama_lengkap,
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60)
         ]);

@@ -42,15 +42,16 @@
                                         <h1 class="h4 text-gray-900 mb-4">Selamat datang di peduli diri</h1>
                                         <p>Masukan data dengan benar</p>
                                     </div>
-                                    <form class="user">
+                                    <form action="{{route('loginproses')}}" class="user" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter Email Address..." name="email">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -59,9 +60,9 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="/home" class="btn btn-primary btn-user btn-block">
+                                        <button class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
@@ -75,7 +76,7 @@
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="/register">Create an Account!</a>
+                                        <a class="small" href="{{route("register")}}">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>

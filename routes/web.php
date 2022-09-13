@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('login.login');
-});
+})->middleware('auth');
 
 //home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -63,3 +63,11 @@ Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
 
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
+
+// auth
+
+Route::group(['middleware' => ['auth','checkrole:admin']],function () {
+    Route::get('admin', function () { return view('admin'); })->middleware('checkRole:admin');
+    Route::get('user', function () { return view('user'); })->middleware(['checkRole:user,admin']);
+});
+    
