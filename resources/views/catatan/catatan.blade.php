@@ -26,12 +26,14 @@
                   <td>{{$row -> lokasi}}</td>
                   <td>{{$row -> suhu_tubuh}}</td>
                   <td class="d-flex">
+                    @if(auth()->user()->role == 'admin')
                       <form action="/deletecatatan/{{$row->id}}" method="POST">
                           @csrf
                           @method('delete')
                           <button type="submit" class="btn btn-warning">Delete</button>
                       </form>
                      <a href="/tampilancatatan/{{$row->id}}" type="submit" class="btn btn-danger">Edit</a>
+                     @endif
                   </td>
               </tr>
               @endforeach
