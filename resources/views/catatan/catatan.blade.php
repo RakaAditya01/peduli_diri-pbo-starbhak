@@ -18,9 +18,12 @@
               </tr>
           </thead>
           <tbody>
+            @php
+            $no = 1;
+              @endphp
               <tr>
-                  @foreach ($data as $row)
-                  <th scope="row">{{ $row->id }}</th>
+                @foreach ($data as $index => $row)
+                <th scope="row">{{ $index + $data->firstItem() }}</th>
                   <td>{{$row -> tanggal}}</td>
                   <td>{{$row -> waktu}}</td>
                   <td>{{$row -> lokasi}}</td>
@@ -39,6 +42,7 @@
               @endforeach
           </tbody>
       </table>
+      {{ $data->links() }}
   </div>
   </div>
 </div>

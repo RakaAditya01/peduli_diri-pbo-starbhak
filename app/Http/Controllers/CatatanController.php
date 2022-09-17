@@ -8,7 +8,7 @@ use App\Models\catatan;
 class CatatanController extends Controller
 {
     public function index(){
-        $data = catatan::all();
+        $data = catatan::paginate(5);
         return view('catatan\catatan',compact('data'));
     }
     public function tambahcatatan(){

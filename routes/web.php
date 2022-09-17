@@ -70,4 +70,18 @@ Route::group(['middleware' => ['auth','checkrole:admin']],function () {
     Route::get('admin', function () { return view('admin'); })->middleware('checkRole:admin');
     Route::get('user', function () { return view('user'); })->middleware(['checkRole:user,admin']);
 });
+
+
+// // catatan
+// Route::get('/catatan',[CatatanController::class, 'index'])->name('catatan');
+
+// Route::get('/tambahcatatan', [CatatanController::class,'tambahcatatan'])->name('tambahcatatan');
+
+// Route::post('/insertcatatan', [CatatanController::class,'store'])->name('insertcatatan');
+
+// Route::get('/tampilancatatan/{id}', [CatatanController::class,'tampilancatatan'])->name('tampilancatatan');
+
+// Route::put('/updatecatatan/{id}', [CatatanController::class,'update'])->name('updatecatatan');
+
+// Route::delete('/deletecatatan/{id}', [CatatanController::class,'destroy'])->name('deletecatatan');
     

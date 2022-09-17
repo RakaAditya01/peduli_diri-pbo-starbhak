@@ -10,9 +10,12 @@ class datadiri extends Model
     use HasFactory;
     protected $table = 'datadiri';
     protected $fillable = [
-        'nik',
         'nama_lengkap',
+        'nik',
         'alamat',
+        'jenis_kelamin',
+        'no_ponsel',
         'tempat_lahir',
+        'email',
     ];
 }

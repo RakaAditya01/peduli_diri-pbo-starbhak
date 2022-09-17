@@ -16,10 +16,13 @@ return new class extends Migration
         
         Schema::create('datadiri', function (Blueprint $table) {
             $table->id();
-            $table->string('nik');
             $table->string('nama_lengkap');
+            $table->string('nik');
             $table->string('alamat');
+            $table->enum('jenis_kelamin',['Laki-Laki','Perempuan']);
+            $table->string('no_ponsel');
             $table->string('tempat_lahir');
+            $table->string('email');
             $table->timestamps();
         });
     }

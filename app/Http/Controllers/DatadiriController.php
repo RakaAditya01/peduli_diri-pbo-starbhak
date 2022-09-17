@@ -10,7 +10,7 @@ use App\Models\datadiri;
 class DatadiriController extends Controller
 {
     public function index(){
-        $data = datadiri::all();
+        $data = datadiri::paginate(5);
         return view('datadiri\datadiri',compact('data'));
     }
     public function tambahdata(){
@@ -19,10 +19,13 @@ class DatadiriController extends Controller
     }
     public function store(request $request){
         $this-> validate($request, [
-            'nik',
             'nama_lengkap',
+            'nik',
             'alamat',
+            'jenis_kelamin',
+            'no_ponsel',
             'tempat_lahir',
+            'email',
         ]);
         datadiri::create($request->all());
         return redirect(route('datadiri'));
