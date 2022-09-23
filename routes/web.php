@@ -26,6 +26,8 @@ Route::get('/', function () {
 //home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('/profile', [HomeController::class,'Profile'])->name('Profile');
+
 
 //datadiri
 Route::get('/datadiri', [DatadiriController::class,'index'])->name('datadiri');
@@ -84,4 +86,9 @@ Route::group(['middleware' => ['auth','checkrole:admin']],function () {
 // Route::put('/updatecatatan/{id}', [CatatanController::class,'update'])->name('updatecatatan');
 
 // Route::delete('/deletecatatan/{id}', [CatatanController::class,'destroy'])->name('deletecatatan');
+
+
     
+
+
+
