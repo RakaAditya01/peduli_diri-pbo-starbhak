@@ -21,8 +21,14 @@ class CatatanController extends Controller
             'waktu',
             'lokasi',
             'suhu_tubuh',
+            'dokumentasi',
         ]);
         catatan::create($request->all());
+        // if($request->hasFile('dokumentasi')){
+        //     $request->file('dokumentasi')->move('fotodokumentasi/', $request->file('dokumentasi')->getClientOriginalName());
+        //     $data->dokumentasi = $request->file('dokumentasi')->getClientOriginalName();
+        //     $data->save();
+        // }
         return redirect(route('catatan'));
         }
     
